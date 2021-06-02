@@ -3,11 +3,22 @@
 Use Spring and JUnit to do unit / integration tests. Use Maven as a package manager.
 
 To run in maven, use this command:
+
 [source, shell]
 ----
 # Clean is optional
 mvn clean
 
 mvn compile exec:java
+----
+
+To run tests in maven, use this command:
+
+[source, shell]
+----
+# Clean is optional
+mvn clean
+
+mvn test
 ----
 

@@ -19,4 +19,10 @@ public class CarImpl implements Car {
 		out.println("I am in CarImpl class!");
 		out.printf("I have %d wheels\n", wheels.getNumberOfWheels());
 	}
+
+	@Override
+	public int driveForNMiles(int nMiles) {
+		out.printf("I have driven for %d miles \n", nMiles);
+		return nMiles;
+	}
 }
