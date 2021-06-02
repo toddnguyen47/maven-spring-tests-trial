@@ -59,4 +59,16 @@ public class CarImplTest {
 
 		this.carImpl.getManufacturer();
 	}
+
+	@Test(expected = InvalidAttributeValueException.class)
+	public void testShouldThrowExceptionOnNoManufacturer() throws InvalidAttributeValueException {
+		PowerMockito.mockStatic(Manufacturer.class);
+		List<String> expectedList = new ArrayList<>();
+		String manufacturer = "Mercedes Benz";
+		expectedList.add(manufacturer);
+		PowerMockito.when(Manufacturer.getListOfManufacturers(Matchers.anyListOf(String.class)))
+				.thenReturn(expectedList);
+
+		this.carImpl.getManufacturer();
+	}
 }
